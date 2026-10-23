@@ -337,6 +337,9 @@ export default function App() {
   const [state, setState] = useState<Snapshot | null>(null);
   const [loadError, setLoadError] = useState("");
   const [page, setPage] = useState<"people" | "promises" | "privacy">("people");
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [page]);
   const [selected, setSelected] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("");
@@ -514,26 +517,50 @@ export default function App() {
               setBrief(null);
             }}
           >
-            recall<span className="wordmark-period">.</span>
+            Recall<span className="wordmark-period">.</span>
           </a>
           <nav aria-label="Main navigation">
             <button
+              aria-current={page === "people" ? "page" : undefined}
               className={page === "people" ? "active" : ""}
               onClick={() => setPage("people")}
             >
               People {state && <Count value={state.people.length} />}
+              {page === "people" && (
+                <motion.span
+                  className="nav-indicator"
+                  layoutId="active-page"
+                  transition={{ duration: reduced ? 0 : 0.55, ease }}
+                />
+              )}
             </button>
             <button
+              aria-current={page === "promises" ? "page" : undefined}
               className={page === "promises" ? "active" : ""}
               onClick={() => setPage("promises")}
             >
               Promises {state && <Count value={state.status.openPromises} />}
+              {page === "promises" && (
+                <motion.span
+                  className="nav-indicator"
+                  layoutId="active-page"
+                  transition={{ duration: reduced ? 0 : 0.55, ease }}
+                />
+              )}
             </button>
             <button
+              aria-current={page === "privacy" ? "page" : undefined}
               className={page === "privacy" ? "active" : ""}
               onClick={() => setPage("privacy")}
             >
               Privacy
+              {page === "privacy" && (
+                <motion.span
+                  className="nav-indicator"
+                  layoutId="active-page"
+                  transition={{ duration: reduced ? 0 : 0.55, ease }}
+                />
+              )}
             </button>
             <button
               aria-label="Sync"
@@ -604,10 +631,26 @@ export default function App() {
                       <Icon name="arrow-up-right" size={13} />
                     </button>
                   </div>
-                  <div className="hero-question" aria-hidden="true">
-                    who is
-                  </div>
-                  <form className="hero-search" onSubmit={lookup}>
+                  <motion.div
+                    className="hero-question"
+                    aria-hidden="true"
+                    initial={reduced ? false : { opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.9, ease }}
+                  >
+                    Who is
+                  </motion.div>
+                  <motion.form
+                    className="hero-search"
+                    onSubmit={lookup}
+                    initial={reduced ? false : { opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.9,
+                      delay: reduced ? 0 : 0.08,
+                      ease,
+                    }}
+                  >
                     <label className="sr-only" htmlFor="who">
                       Who is…?
                     </label>
@@ -627,15 +670,30 @@ export default function App() {
                     >
                       <Icon name="arrow-right" size={30} />
                     </button>
-                  </form>
-                  <div className="hero-bottom">
+                  </motion.form>
+                  <motion.div
+                    className="hero-bottom"
+                    initial={reduced ? false : { opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.9,
+                      delay: reduced ? 0 : 0.16,
+                      ease,
+                    }}
+                  >
                     <p>
-                      {preMeeting
-                        ? "Walk in with the details that matter."
-                        : "Names fade. The conversation doesn’t have to."}
+                      {preMeeting ? (
+                        "Walk in with the details that matter."
+                      ) : (
+                        <>
+                          Remember the people you meet.
+                          <br />
+                          And the details that matter.
+                        </>
+                      )}
                     </p>
                     <span className="label">A brief, with receipts.</span>
-                  </div>
+                  </motion.div>
                   {searchMessage && (
                     <p className="search-message" role="status">
                       {searchMessage}

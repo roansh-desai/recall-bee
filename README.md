@@ -134,7 +134,7 @@ When someone asks me a question and I stay silent for a few seconds, a phone cou
 
 ## Project origin and licenses
 
-Recall is a fresh standalone project created during the hackathon, with no dependency on another personal project. No pre-existing application snippet is reused. The hand-written blur fade, number ticker, empty state, and toast follow the supplied design descriptions; no remote component source was copied. React, Vite, Tailwind, Motion and Phosphor are dependencies; Geist fonts carry their own SIL Open Font License. Recall source is [MIT licensed](LICENSE).
+Recall is a fresh standalone project created during the hackathon, with no dependency on another personal project. No pre-existing application snippet is reused. The owner’s portfolio supplied the approved light palette and layout direction (large Geist type, warm paper, a holographic wash and generous spacing); Recall implements those styles independently. Gold is restricted to selection/search accents and the live badge. Motion uses short entrances, a sourced-brief blur fade, count transitions and a pointer-following ambient layer that stays static for touch and reduced motion. The hand-written blur fade, number ticker, empty state, and toast follow the supplied design descriptions; no remote component source was copied. React, Vite, Tailwind, Motion and Phosphor are dependencies; Geist fonts carry their own SIL Open Font License. Recall source is [MIT licensed](LICENSE).
 
 [Product feedback](PRODUCT_FEEDBACK.md) · [Friction log](FRICTION_LOG.md) · [Feature requests](FEATURE_REQUESTS.md)
 
