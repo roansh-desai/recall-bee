@@ -1,6 +1,6 @@
 # Recall — Devpost submission copy
 
-**Status:** Submission preparation. This file does not prove that live end-to-end verification, the public video, or Devpost submission has happened. Complete the acceptance checklist below and remove unsupported claims from the final entry if any capability is cut.
+**Status:** Live Bee ingestion, a sourced person card/handle/brief, an unresolved promise, and search have been verified. The repository is public with MIT licensing. Real todo write-back remains unverified because the recordings supplied `Unknown` speaker labels. The public video and Devpost submission are still pending. Do not claim those steps are complete.
 
 ## Project name
 
@@ -71,8 +71,8 @@ Recall was created as a fresh repository during the hackathon, with no dependenc
 ## Before pressing Submit
 
 - [ ] Live Bee ingest works in the final public revision and the demo shows it.
-- [ ] Repo public, MIT LICENSE present, no secrets or private data in files/history.
-- [ ] README includes exact Bee-at-runtime pointers, PRIVACY, and Future work.
+- [x] Repo public, MIT LICENSE present; staged files and commit history checked for credentials and real transcript data.
+- [x] README includes exact Bee-at-runtime pointers, PRIVACY, and Future work.
 - [ ] Video under 3:00, public on YouTube/Vimeo, English, no copyrighted music, consented people/details only.
 - [ ] Devpost Bee track selected; description, repo URL, video URL, feedback, and friction log present.
 - [ ] Pressed **SUBMIT**, not only saved a draft, before **October 24, 2026 at 12:30 a.m. IST**.

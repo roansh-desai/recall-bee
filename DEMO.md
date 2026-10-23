@@ -31,6 +31,8 @@ Pause between speakers and let Bee process the conversation. Set **which speaker
 
 If live data is delayed, show the real delay honestly and use a previously processed consented conversation for the card demonstration. Keep the worker running; do not claim an end-to-end live update unless it occurred. If todo write-back is unverified or failing, say so and omit that claim rather than faking completion. The demo still needs real Bee ingestion and useful sourced cards.
 
+**Current-recording alternative for 1:35–2:05:** the inspected recordings have `Unknown` speaker labels. Show the unresolved promise and its source, and say: “Bee captured the promise, but didn't distinguish the speakers here. Recall keeps it visible without guessing who owes whom. Bee todo write-back is implemented, but I haven't verified it on this recording.” Do not tick a box and describe it as a successful remote todo completion.
+
 ## Pre-recording checklist
 
 - [ ] Real device or Apple Watch recording; all participants and shown details consented.

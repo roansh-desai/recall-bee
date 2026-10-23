@@ -20,12 +20,14 @@ This records observed behavior, not a claim that the video or Devpost entry has 
 
 ## Automated and visual checks
 
-`npm test` covers transcript normalization, real-shape regression cases, stream/backfill behavior, missed-update recovery, forgotten-source suppression, extraction, ambiguous identity, sourced briefs, retrieval abstention, promise write-back, and the HTTP privacy flow. `npm run build` performs TypeScript checking and a Vite production build.
+**34 tests passed.** `npm test` covers transcript normalization, real-shape regression cases, stream/backfill behavior, missed-update recovery, forgotten-source suppression, extraction, ambiguous identity, sourced briefs, retrieval abstention, promise write-back, and the HTTP privacy flow. `npm run build` passed TypeScript checking and a Vite production build.
 
 The browser checks use invented fixture records, with screenshots under `docs/screens/`. Desktop and 360px mobile views cover home, brief, person, promises, privacy, and the empty state. Reduced-motion/touch behavior keeps the ambient background static. Live account data is not captured in public screenshots. The user's later portfolio reference informed the large type, centered navigation, spacing, and numbered people rows; Recall retains the requested dark/gold palette.
 
 ## Publication boundary
 
 Only source, tests, invented fixtures, documentation, and fixture screenshots belong in Git. `data/`, `.env`, logs, dependencies, and build output are ignored. The local video handoff is not part of the public application. Publication uses **`feat/recall`**, never `main`.
+
+GitHub reports the repository public, its default branch `feat/recall`, and its detected license MIT. The initial publication scan found no staged private transcript text/conversation IDs, credential-pattern matches, or files under `data/`. A `git log -p` review of token/bearer matches found only configuration references, documentation, package names, and an invented test credential.
 
 See [DEMO.md](../DEMO.md) for the recording script and [SUBMISSION.md](../SUBMISSION.md) for the final acceptance checklist. Do not substitute fixture evidence for the required real Bee demonstration.

@@ -441,15 +441,24 @@ export default function App() {
             `/people/${encodeURIComponent(matches[0].id)}/brief`,
           ),
         );
-      } else if (matches.length > 1) {
-        setFilter(name);
-        setSearchMessage(
-          "More than one person matches. Choose a person below.",
-        );
-      } else
-        setSearchMessage(
-          "I don't have that. Try a name from your people below.",
-        );
+      } else {
+        const retrieved = await api<AskAnswer>("/ask", "POST", {
+          query: `Who is ${name}?`,
+        });
+        setAnswer(retrieved);
+        if (matches.length > 1) {
+          setFilter(name);
+          setSearchMessage(
+            "More than one person matches. Choose a person below.",
+          );
+        } else {
+          setSearchMessage(
+            retrieved.sources.length
+              ? "No confirmed person card yet. Retrieved excerpts appear below."
+              : "I don't have that. Try a name from your people below.",
+          );
+        }
+      }
     } catch (e) {
       setSearchMessage((e as Error).message);
     } finally {
