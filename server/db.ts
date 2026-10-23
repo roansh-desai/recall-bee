@@ -121,8 +121,8 @@ export class Store {
         id: h.id,
         personId: h.person_id,
         platform: h.platform,
-        handle: h.handle,
-        url: h.url,
+        handle: this.getSetting(`handle:${h.id}`) || h.handle,
+        url: this.getSetting(`handle-url:${h.id}`) || h.url,
         source: JSON.parse(h.source_json),
       })),
       promises: promises.filter((p) => p.personId === r.id),
@@ -328,7 +328,7 @@ export class Store {
       }
       this.db
         .prepare(
-          "DELETE FROM settings WHERE key LIKE 'name:%' OR key LIKE 'merged:%'",
+          "DELETE FROM settings WHERE key LIKE 'name:%' OR key LIKE 'merged:%' OR key LIKE 'handle:%' OR key LIKE 'handle-url:%'",
         )
         .run();
     })();
