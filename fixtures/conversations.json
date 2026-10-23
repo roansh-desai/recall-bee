@@ -1,0 +1,36 @@
+[
+  {
+    "id": "fake-conversation-001",
+    "title": "FAKE FIXTURE — Saturday builders meetup",
+    "startedAt": "2026-10-23T12:00:00.000Z",
+    "updatedAt": "2026-10-23T12:04:00.000Z",
+    "mySpeaker": "speaker_1",
+    "location": null,
+    "isFixture": true,
+    "utterances": [
+      {"id":"f1-u1","speaker":"speaker_1","text":"My name is Alex Demo. This entire conversation is an invented test fixture."},
+      {"id":"f1-u2","speaker":"speaker_2","text":"My name is Priya Shah. I'm a product designer at Example Studio."},
+      {"id":"f1-u3","speaker":"speaker_2","text":"We met at the Saturday builders meetup. We discussed accessible onboarding."},
+      {"id":"f1-u4","speaker":"speaker_2","text":"I am building a community library app. I love weekend hikes."},
+      {"id":"f1-u5","speaker":"speaker_2","text":"My Instagram is @recall_fake_priya_000. This is an invented handle for a fake fixture."},
+      {"id":"f1-u6","speaker":"speaker_1","text":"Priya, I'll send you the pitch deck by Friday."},
+      {"id":"f1-u7","speaker":"speaker_2","text":"I'll share the onboarding sketches tomorrow."}
+    ]
+  },
+  {
+    "id": "fake-conversation-002",
+    "title": "FAKE FIXTURE — Design systems conversation",
+    "startedAt": "2026-10-22T09:00:00.000Z",
+    "updatedAt": "2026-10-22T09:05:00.000Z",
+    "mySpeaker": "speaker_2",
+    "location": null,
+    "isFixture": true,
+    "utterances": [
+      {"id":"f2-u1","speaker":"speaker_2","text":"My name is Alex Demo."},
+      {"id":"f2-u2","speaker":"speaker_1","text":"My name is Noah Chen. I'm an engineer at Example Lab."},
+      {"id":"f2-u3","speaker":"speaker_1","text":"We discussed design systems. I enjoy urban sketching."},
+      {"id":"f2-u4","speaker":"speaker_1","text":"Find me on LinkedIn."},
+      {"id":"f2-u5","speaker":"speaker_2","text":"I'll send you the component notes."}
+    ]
+  }
+]

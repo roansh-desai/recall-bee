@@ -1,0 +1,39 @@
+{
+  "name": "recall-bee",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A local, sourced people memory powered by Bee",
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "dev:fixture": "RECALL_MODE=fixture tsx scripts/dev.ts",
+    "server": "tsx server/index.ts",
+    "build": "tsc --noEmit && vite build",
+    "test": "tsx --test tests/*.test.ts",
+    "forget": "tsx scripts/forget.ts",
+    "probe": "tsx scripts/probe.ts"
+  },
+  "dependencies": {
+    "@phosphor-icons/core": "^2.1.1",
+    "@tailwindcss/vite": "^4.1.0",
+    "better-sqlite3": "^12.0.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "geist": "^1.4.0",
+    "motion": "^12.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  }
+}

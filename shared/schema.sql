@@ -1,0 +1,10 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE IF NOT EXISTS conversations (id TEXT PRIMARY KEY, title TEXT NOT NULL, started_at TEXT NOT NULL, updated_at TEXT NOT NULL, my_speaker TEXT, location TEXT, utterances_json TEXT NOT NULL, is_fixture INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS people (id TEXT PRIMARY KEY, name TEXT NOT NULL, last_seen TEXT NOT NULL, created_at TEXT NOT NULL, name_source_json TEXT NOT NULL, is_fixture INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS person_conversations (person_id TEXT REFERENCES people(id) ON DELETE CASCADE, conversation_id TEXT REFERENCES conversations(id) ON DELETE CASCADE, PRIMARY KEY(person_id,conversation_id));
+CREATE TABLE IF NOT EXISTS details (id TEXT PRIMARY KEY, person_id TEXT NOT NULL REFERENCES people(id) ON DELETE CASCADE, kind TEXT NOT NULL, text TEXT NOT NULL, source_json TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS handles (id TEXT PRIMARY KEY, person_id TEXT NOT NULL REFERENCES people(id) ON DELETE CASCADE, platform TEXT NOT NULL, handle TEXT, url TEXT, source_json TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS promises (id TEXT PRIMARY KEY, person_id TEXT NOT NULL REFERENCES people(id) ON DELETE CASCADE, direction TEXT NOT NULL, text TEXT NOT NULL, due_hint TEXT, alarm_at TEXT, completed INTEGER NOT NULL DEFAULT 0, bee_todo_id TEXT, sync_error TEXT, source_json TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS merge_candidates (id TEXT PRIMARY KEY, person_a TEXT NOT NULL REFERENCES people(id) ON DELETE CASCADE, person_b TEXT NOT NULL REFERENCES people(id) ON DELETE CASCADE, reason TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'pending');
+CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS forgotten_conversations (id TEXT PRIMARY KEY);
