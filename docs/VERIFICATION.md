@@ -4,6 +4,7 @@ This records observed behavior, not a claim that the video or Devpost entry has 
 
 ## Live Bee evidence
 
+- The owner confirmed that the demo recordings came from a **physical Bee device**. The API's `device_type` field reported `unknown`, so hardware provenance is owner-confirmed, not inferred from that field. Show the physical device in the video.
 - Bee CLI authenticated after owner approval. Recall was started with `npm run dev`, which runs the proxy, API/ingest worker, and frontend together.
 - Real conversation-list, conversation-get, transcript, facts, keyword search, and all three location commands succeeded. One class recording supplied 469 transcript entries; each had a `spoken_at` value. Facts returned two records; a subject search returned one result.
 - A new owner-recorded sample produced a person card, a spoken social link, a sourced brief, and an unresolved promise. The brief used only available evidence rather than padding missing details.
